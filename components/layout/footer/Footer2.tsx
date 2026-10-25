@@ -1,3 +1,4 @@
+import { activeSocials, navLinks, profile } from '@/util/profile'
 
 export default function Footer2() {
 	return (
@@ -6,29 +7,26 @@ export default function Footer2() {
 				<div className="section-footer-2 position-relative">
 					<div className="container position-relative z-1 border-top border-1 pb-2 pt-4">
 						<div className="text-center">
-							<a className="d-flex main-logo align-items-center justify-content-center mb-3">
-								<img src="assets/imgs/home-page-2/template/favicon.svg" alt="zelio" />
-								<span className="fs-4 ms-2">RahulShirode.dev</span>
+							<a href="#about" className="d-flex main-logo align-items-center justify-content-center mb-3">
+								<img src="assets/imgs/home-page-2/template/favicon.svg" alt="" />
+								<span className="fs-4 ms-2">{profile.brand}</span>
 							</a>
 							<div className="d-flex justify-content-center gap-3">
-								<a href="http://facebook.com">
-									<i className="ri-facebook-circle-fill fs-18" />
+								<a href={`mailto:${profile.email}`} aria-label="Email">
+									<i className="ri-mail-fill fs-18" />
 								</a>
-								<a href="http://linkedin.com">
-									<i className="ri-linkedin-fill fs-18" />
-								</a>
-								<a href="http://github.com">
-									<i className="ri-github-fill fs-18" />
-								</a>
+								{activeSocials.map((s) => (
+									<a href={s.url} target="_blank" rel="noopener noreferrer" aria-label={s.label} key={s.label}>
+										<i className={`${s.icon} fs-18`} />
+									</a>
+								))}
 							</div>
 							<div className="navigation d-flex align-items-center justify-content-center flex-wrap gap-4 my-4">
-								<a href="#about" className="fs-6"> About me </a>
-								<a href="#resume" className="fs-6"> Resume </a>
-								<a href="#services" className="fs-6"> Services </a>
-								<a href="#portfolio" className="fs-6"> Portfolio </a>
-								<a href="#blog" className="fs-6"> Blog </a>
-								<a href="#contact" className="fs-6"> Contact </a>
+								{navLinks.map((l) => (
+									<a href={l.href} className="fs-6" key={l.href}>{l.label}</a>
+								))}
 							</div>
+							<p className="fs-7 text-300 mb-2">© {new Date().getFullYear()} {profile.name}</p>
 						</div>
 					</div>
 				</div>

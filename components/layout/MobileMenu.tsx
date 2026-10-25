@@ -1,7 +1,7 @@
 'use client'
 import Link from 'next/link'
-import { useState } from 'react'
 import PerfectScrollbar from 'react-perfect-scrollbar'
+import { activeSocials, navLinks, profile } from '@/util/profile'
 
 export default function MobileMenu({ isMobileMenu, handleMobileMenu }: any) {
 	return (
@@ -10,8 +10,8 @@ export default function MobileMenu({ isMobileMenu, handleMobileMenu }: any) {
 				<div className="mobile-header-wrapper-inner">
 					<div className="mobile-header-logo">
 						<Link className="d-flex main-logo align-items-center d-inline-flex" href="/">
-							<img src="/assets/imgs/footer-1/logo.svg" alt="infinia" />
-							<span className="fs-4 ms-2 text-dark">william.design</span>
+							<img src="assets/imgs/home-page-2/template/favicon.svg" alt="" />
+							<span className="fs-4 ms-2 text-dark">{profile.brand}</span>
 						</Link>
 						<div className={`burger-icon burger-icon-white border rounded-3 ${isMobileMenu ? 'burger-close' : ''}`} onClick={handleMobileMenu}>
 							<span className="burger-icon-top" />
@@ -24,26 +24,21 @@ export default function MobileMenu({ isMobileMenu, handleMobileMenu }: any) {
 							<div className="mobile-menu-wrap mobile-header-border">
 								<nav>
 									<ul className="mobile-menu font-heading ps-0">
-										<li className="nav-item">
-											<Link className="nav-link active" href="/">Home</Link>
-										</li>
-										<li className="nav-item">
-											<Link className="nav-link" href="/services">Services</Link>
-										</li>
-										<li className="nav-item">
-											<Link className="nav-link" href="/work">Portfolio</Link>
-										</li>
-										<li className="nav-item">
-											<Link className="nav-link" href="/pricing">Pricing</Link>
-										</li>
-										<li className="nav-item">
-											<Link className="nav-link" href="/blog-list">Blog</Link>
-										</li>
-										<li className="nav-item">
-											<Link className="nav-link" href="/#contact">Contact</Link>
-										</li>
+										{navLinks.map((l, i) => (
+											<li className="nav-item" key={l.href}>
+												<a className={`nav-link${i === 0 ? ' active' : ''}`} href={l.href} onClick={handleMobileMenu}>{l.label}</a>
+											</li>
+										))}
 									</ul>
 								</nav>
+								<div className="d-flex gap-3 mt-4">
+									<a href={`mailto:${profile.email}`} aria-label="Email"><i className="ri-mail-fill fs-18" /></a>
+									{activeSocials.map((s) => (
+										<a href={s.url} target="_blank" rel="noopener noreferrer" aria-label={s.label} key={s.label}>
+											<i className={`${s.icon} fs-18`} />
+										</a>
+									))}
+								</div>
 							</div>
 						</PerfectScrollbar>
 					</div>

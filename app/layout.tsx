@@ -6,6 +6,7 @@ import "@/public/assets/css/vendors/carouselTicker.css";
 import "@/public/assets/css/vendors/magnific-popup.css";
 import "@/public/assets/fonts/remixicon/remixicon.css";
 import "@/public/assets/css/main.css";
+import "@/public/assets/css/custom.css";
 
 const urbanist = Urbanist({
     weight: ["300", "400", "500", "600", "700"],
@@ -27,8 +28,8 @@ const dmMono = DM_Mono({
 });
 
 export const metadata: Metadata = {
-    title: "Rahul Shirode - DevOps Engineer",
-    description: "Rahul Shirode - DevOps Engineer",
+    title: "Rahul Shirode – Web Operations Engineer",
+    description: "Senior web operations engineer in Pune with 12+ years running enterprise WordPress platforms, migrations and releases for clients in the UK and USA.",
 };
 
 export default function RootLayout({

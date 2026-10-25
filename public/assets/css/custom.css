@@ -1,0 +1,72 @@
+/* Portfolio customisations on top of the template's main.css */
+
+/* Service cards use icon-font icons instead of inline SVGs */
+.section-service-2 .card-servies-2 > i {
+  font-size: 26px;
+  line-height: 1;
+  color: var(--tc-neutral-0);
+  transition: color 0.3s ease;
+}
+.section-service-2 .card-servies-2:hover > i {
+  color: #62a92b;
+}
+
+/* Experience: company list works as tabs */
+.section-experience .technology {
+  width: 100%;
+  text-align: left;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+}
+.section-experience .technology.active {
+  border-color: #62a92b !important;
+  background-color: rgba(98, 169, 43, 0.1);
+}
+.exp-initials {
+  width: 48px;
+  height: 48px;
+  flex: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  font-family: var(--dmMono), monospace;
+  font-weight: 500;
+  font-size: 14px;
+  color: #0d1f0d;
+  background: var(--tc-linear-4);
+}
+
+/* Projects: text panel in place of a screenshot */
+.project-highlight {
+  min-height: 280px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 40px;
+  border-radius: 12px;
+  border: 1px solid var(--tc-border-1);
+  background:
+    radial-gradient(circle at 85% 15%, rgba(98, 169, 43, 0.25), transparent 55%),
+    var(--tc-bg-3);
+}
+.project-highlight .big {
+  font-size: clamp(36px, 5vw, 56px);
+  font-weight: 700;
+  line-height: 1.05;
+}
+
+/* Hero and skills: icon-font logos centred in their tiles */
+.brand-logo > i {
+  line-height: 1;
+}
+
+/* Leave room for the slider arrows under the project details */
+@media (min-width: 768px) {
+  .section-projects-2 .swiper-slide > div {
+    padding-bottom: 110px !important;
+  }
+}

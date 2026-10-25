@@ -1,4 +1,4 @@
-
+import { certifications, education } from '@/util/profile'
 
 export default function Education2() {
 	return (
@@ -18,42 +18,17 @@ export default function Education2() {
 									</div>
 									<div className="d-flex flex-column h-100 position-relative mt-5">
 										<ul className="ps-3">
-											<li className="position-relative z-1 mb-3">
-												<div className="d-flex gap-2">
-													<p className="text-300 text-nowrap fw-regular mb-0">2020-2024:</p>
-													<div>
-														<span className="text-primary-2">MIT</span>
-														<p className="text-dark">Bachelor’s Degree in Computer Science</p>
+											{education.map((e) => (
+												<li className="position-relative z-1 mb-3" key={e.text}>
+													<div className="d-flex gap-2">
+														<p className="text-300 text-nowrap fw-regular mb-0">{e.label}:</p>
+														<div>
+															<span className="text-primary-2">{e.org}</span>
+															<p className="text-dark">{e.text}</p>
+														</div>
 													</div>
-												</div>
-											</li>
-											<li className="position-relative z-1 mb-3">
-												<div className="d-flex gap-2">
-													<p className="text-300 text-nowrap fw-regular mb-0">2018-2019:</p>
-													<div>
-														<span className="text-primary-2">Harvard University</span>
-														<p className="text-dark">Certification in React and Redux, Node.js Developer Course</p>
-													</div>
-												</div>
-											</li>
-											<li className="position-relative z-1 mb-3">
-												<div className="d-flex gap-2">
-													<p className="text-300 text-nowrap fw-regular mb-0">2015-2016:</p>
-													<div>
-														<span className="text-primary-2">Stanford University</span>
-														<p className="text-dark">Certification in Full Stack Web Development</p>
-													</div>
-												</div>
-											</li>
-											<li className="position-relative z-1 mb-3">
-												<div className="d-flex gap-2">
-													<p className="text-300 text-nowrap fw-regular mb-0">2013-2015:</p>
-													<div>
-														<span className="text-primary-2">University of Washington</span>
-														<p className="text-dark">Certification in React and Redux, Node.js Developer Course</p>
-													</div>
-												</div>
-											</li>
+												</li>
+											))}
 										</ul>
 										<div className="line-left position-absolute top-0 border-start z-0" />
 									</div>
@@ -67,37 +42,21 @@ export default function Education2() {
 									<svg xmlns="http://www.w3.org/2000/svg" width={32} height={32} viewBox="0 0 32 32" fill="none">
 										<path className="fill-primary-2" d="M20 4H28V10.6667H25.3333V6.66667H20V4ZM12 4V6.66667H6.66667V10.6667H4V4H12ZM20 28V25.3333H25.3333V21.3333H28V28H20ZM12 28H4V21.3333H6.66667V25.3333H12V28ZM4 14.6667H28V17.3333H4V14.6667Z" fill="#A8FF53" />
 									</svg>
-									<h2 className="mb-0 ms-2">Researched</h2>
+									<h2 className="mb-0 ms-2">Certifications</h2>
 								</div>
 								<div className="d-flex flex-column h-100 position-relative mt-5">
 									<ul className="ps-3">
-										<li className="position-relative z-1 mb-3">
-											<div className="d-flex gap-2">
-												<p className="text-300 text-nowrap fw-regular mb-0">2023-2024:</p>
-												<div>
-													<span className="text-primary-2">Advanced Data Analytics with Big Data Tools</span>
-													<p className="text-dark">Utilized big data tools for advanced analytics and insights.</p>
+										{certifications.map((c) => (
+											<li className="position-relative z-1 mb-3" key={c.text}>
+												<div className="d-flex gap-2">
+													<p className="text-300 text-nowrap fw-regular mb-0">{c.date}:</p>
+													<div>
+														<span className="text-primary-2">{c.org}</span>
+														<p className="text-dark">{c.text}</p>
+													</div>
 												</div>
-											</div>
-										</li>
-										<li className="position-relative z-1 mb-3">
-											<div className="d-flex gap-2">
-												<p className="text-300 text-nowrap fw-regular mb-0">2021-2013:</p>
-												<div>
-													<span className="text-primary-2">Cloud-Native Application Architectures</span>
-													<p className="text-dark">Studied best practices for designing cloud-native applications.</p>
-												</div>
-											</div>
-										</li>
-										<li className="position-relative z-1 mb-3">
-											<div className="d-flex gap-2">
-												<p className="text-300 text-nowrap fw-regular mb-0">2019-2020:</p>
-												<div>
-													<span className="text-primary-2">AI-Driven User Experience Personalization</span>
-													<p className="text-dark">Leveraged AI to personalize user experiences based on behavior.</p>
-												</div>
-											</div>
-										</li>
+											</li>
+										))}
 									</ul>
 									<div className="line-left position-absolute top-0 border-start z-0" />
 								</div>
